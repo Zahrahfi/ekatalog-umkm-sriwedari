@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Katalog UMKM Desa Sriwedari | Kabupaten Ngawi</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/logo_ngawi.png">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+
+                <img src="assets/img/logo_ngawi.png" alt="Logo Ngawi">
+
+                <div>
+
+                    <h5>E-Katalog UMKM</h5>
+
+                    <small>Desa Sriwedari | Kabupaten Ngawi</small>
+
+                </div>
+
+            </a>
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active" href="#hero">
+
+                            Beranda
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#produk">
+
+                            Produk
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#tentang">
+
+                            Tentang
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#kontak">
+
+                            Kontak
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section id="hero" class="hero">
+
+        <div class="container">
+
+            <div class="row justify-content-center text-center">
+
+                <div class="col-lg-8">
+
+                    <span class="hero-badge">
+
+                        🌿 Produk Lokal Desa
+
+                    </span>
+
+                    <h1>
+
+                        E-KATALOG
+
+                        <span>UMKM DESA SRIWEDARI</span>
+
+                    </h1>
+
+                    <p>
+
+                        Temukan berbagai produk unggulan UMKM Desa Sriwedari.
+                        Semua produk dikelola langsung oleh pelaku UMKM lokal.
+
+                    </p>
+
+                    <a href="#produk" class="btn btn-success btn-lg">
+
+                        Jelajahi Produk
+
+                        <i class="bi bi-arrow-right ms-2"></i>
+
+                    </a>
+
+                </div>
+
+                
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= STATISTIK ================= -->
+
+    <section class="statistik">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="stat-card">
+
+                        <i class="bi bi-shop"></i>
+
+                        <h2 id="jumlahUmkm">0</h2>
+
+                        <p>Total UMKM</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="stat-card">
+
+                        <i class="bi bi-box-seam"></i>
+
+                        <h2 id="jumlahProduk">0</h2>
+
+                        <p>Total Produk</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="stat-card">
+
+                        <i class="bi bi-grid"></i>
+
+                        <h2 id="jumlahKategori">0</h2>
+
+                        <p>Kategori</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= PRODUK ================= -->
+
+    <section id="produk" class="section-padding">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+
+                    Produk Unggulan
+
+                </h2>
+
+                <p>
+
+                    Jelajahi produk-produk terbaik hasil karya UMKM Desa Sriwedari.
+
+                </p>
+
+            </div>
+
+            <!-- SEARCH -->
+
+            <div class="row justify-content-center mb-4">
+
+                <div class="col-lg-7">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        class="form-control form-control-lg"
+                        placeholder="Cari Produk, UMKM atau Kategori...">
+
+                </div>
+
+            </div>
+
+            <!-- FILTER -->
+
+            <div
+                class="text-center mb-5"
+                id="kategori-list">
+
+            </div>
+
+            <!-- LOADING -->
+
+            <div
+                id="loading"
+                class="text-center py-5">
+
+                <div class="spinner-border text-success">
+
+                </div>
+
+                <p class="mt-3">
+
+                    Memuat produk...
+
+                </p>
+
+            </div>
+
+            <!-- LIST PRODUK -->
+
+            <div
+                class="row"
+                id="product-list">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= TENTANG ================= -->
+
+    <section id="tentang" class="about section-padding">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-6">
+
+                    <img
+                        src="https://placehold.co/600x450/F4F8F3/2E7D32?text=Desa+Sriwedari"
+                        class="img-fluid rounded-4 shadow">
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <h2>
+
+                        Tentang UMKM Desa Sriwedari
+
+                    </h2>
+
+                    <p>
+
+                        UMKM Desa Sriwedari berperan sebagai salah satu pendorong utama ekonomi masyarakat melalui berbagai kegiatan usaha yang berjalan secara mandiri.
+                        Beragam usaha lokal yang dikelola oleh masyarakat setempat dengan berbagai macam produk, mulai dari makanan, minuman, hasil ternak, sembako, hingga kebutuhan sehari-hari.
+                        Setiap pelaku UMKM menawarkan produk yang berkualitas dengan ciri khas mereka masing-masing serta berperan dalam menggerakkan ekonomi desa.
+                        Melalui halaman ini, masyarakat dapat lebih mudah mengenali profil tiap UMKM, produk unggulan, serta informasi pemesanan.
+                        Diharapkan keberadaan katalog digital ini dapat memperluas jangkauan promosi, meningkatkan penjualan, dan mendukung perkembangan UMKM Desa Sriwedari agar semakin baik dan dikenal oleh masyarakat luas.
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= KONTAK ================= -->
+
+    <section id="kontak" class="contact section-padding">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+
+                    Hubungi Kami
+
+                </h2>
+
+                <p>
+
+                    Pemerintah Desa Sriwedari
+
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="contact-card">
+
+                        <i class="bi bi-geo-alt"></i>
+
+                        <h5>
+
+                            Alamat
+
+                        </h5>
+
+                        <p>
+
+                            Ds. Sriwedari, Kec. Karanganyar, Kab. Ngawi
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="contact-card">
+
+                        <i class="bi bi-envelope"></i>
+
+                        <h5>
+
+                            Email
+
+                        </h5>
+
+                        <p>
+
+                            sriwedarisatu@email.com
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="contact-card">
+
+                        <i class="bi bi-telephone"></i>
+
+                        <h5>
+
+                            Telepon
+
+                        </h5>
+
+                        <p>
+
+                            085335045232 | Anton
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+
+                © 2026 E-Katalog UMKM Desa Sriwedari
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Javascript -->
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
