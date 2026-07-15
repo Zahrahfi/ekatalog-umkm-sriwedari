@@ -59,6 +59,27 @@ async function loadData(){
 
         sembunyikanLoading();
 
+
+        const posisi = sessionStorage.getItem("scrollPosition");
+
+        if(posisi){
+
+            setTimeout(()=>{
+
+                window.scrollTo({
+
+                    top: Number(posisi),
+
+                    behavior:"instant"
+
+                });
+
+                sessionStorage.removeItem("scrollPosition");
+
+            },100);
+
+        }
+
     }
 
     catch(error){
@@ -112,7 +133,11 @@ function updateStatistik(){
 
         ...new Set(
 
-            semuaProduk.map(item => item.kategori)
+            semuaProduk.flatMap(item =>
+                item.kategori
+                    .split(",")
+                    .map(k => k.trim())
+            )   
 
         )
 
@@ -134,7 +159,11 @@ function tampilkanKategori(){
 
         ...new Set(
 
-            semuaProduk.map(item => item.kategori)
+            semuaProduk.flatMap(item =>
+                item.kategori
+                    .split(",")
+                    .map(k => k.trim())
+            )
 
         )
 
@@ -228,7 +257,10 @@ function filterProduk(){
 
             ||
 
-            item.kategori === kategoriAktif;
+            item.kategori
+                .split(",")
+                .map(k => k.trim())
+                .includes(kategoriAktif);
 
         return cocokNama && cocokKategori;
 
@@ -262,6 +294,20 @@ function formatWA(no){
     }
 
     return no;
+
+}
+
+
+// ======================================================
+// SIMPAN SESSION SCROLL
+// ======================================================
+
+function simpanScroll(){
+
+    sessionStorage.setItem(
+        "scrollPosition",
+        window.scrollY
+    );
 
 }
 
@@ -332,11 +378,16 @@ function tampilkanProduk(data){
 
                 <div class="card-body d-flex flex-column">
 
-                    <span class="category">
+                    <div class="product-categories">
 
-                        ${item.kategori}
+                        ${
+                            item.kategori
+                                .split(",")
+                                .map(k => `<span class="category">${k.trim()}</span>`)
+                                .join("")
+                        }
 
-                    </span>
+                    </div>
 
                     <h5>
 
@@ -358,13 +409,18 @@ function tampilkanProduk(data){
 
                     <div class="price">
 
-                        Rp ${Number(item.harga).toLocaleString("id-ID")}
+                        ${
+                            !isNaN(item.harga) && item.harga !== ""
+                                ? `Rp ${Number(item.harga).toLocaleString("id-ID")}`
+                                : item.harga
+                        }
 
                     </div>
 
                     <a
                     href="detail.html?id=${item.id}"
-                    class="btn btn-success w-100">
+                    class="btn btn-success w-100"
+                    onclick="simpanScroll()">
 
                         Lihat Detail
 
