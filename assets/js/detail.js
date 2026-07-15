@@ -128,9 +128,9 @@ function tampilkanDetail(produk){
 
     document.getElementById("detailHarga").textContent =
 
-    "Rp " +
-    Number(produk.harga)
-    .toLocaleString("id-ID");
+    !isNaN(produk.harga) && produk.harga !== ""
+        ? "Rp " + Number(produk.harga).toLocaleString("id-ID")
+        : produk.harga;
 
 
 
