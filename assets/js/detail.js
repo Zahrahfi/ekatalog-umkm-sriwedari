@@ -249,8 +249,11 @@ function tampilkanProdukLain(
 
                     <div class="price">
 
-                    Rp ${Number(item.harga)
-                    .toLocaleString("id-ID")}
+                        ${
+                            !isNaN(item.harga) && item.harga !== ""
+                                ? `Rp ${Number(item.harga).toLocaleString("id-ID")}`
+                                : item.harga
+                        }
 
                     </div>
 
