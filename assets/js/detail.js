@@ -126,11 +126,12 @@ function tampilkanDetail(produk){
 
 
 
-    document.getElementById("detailHarga").textContent =
+   const harga = String(produk.harga).trim();
 
-    !isNaN(produk.harga) && produk.harga !== ""
-        ? "Rp " + Number(produk.harga).toLocaleString("id-ID")
-        : produk.harga;
+    document.getElementById("detailHarga").textContent =
+        /^\d+$/.test(harga)
+            ? "Rp " + Number(harga).toLocaleString("id-ID")
+            : harga;
 
 
 
